@@ -5,7 +5,7 @@ import java.util.Map;
 public class Chapter1 {
 
     //todo:P01
-    public static Map<Character,Integer> CountingDublicateCharacters(String text){
+    public  Map<Character,Integer> CountingDublicateCharacters(String text){
 
         Map<Character,Integer> count=new Hashtable<>();
 
@@ -20,7 +20,7 @@ public class Chapter1 {
     }
 
     //todo:P03
-    public static String reversingLetters(String word){
+    public  String reversingLetters(String word){
 
         String text1=flip(word.substring(0,word.length()/2+1));
         String text2=flip(word.substring(word.length()/2+1));
@@ -28,7 +28,7 @@ public class Chapter1 {
         return text2+text1;
 
     }
-    private static String flip(String word){
+    private  String flip(String word){
         String aux="";
         for (int i = word.length() - 1; i >= 0; i--) {
             char ch = word.charAt(i);
@@ -47,7 +47,7 @@ public class Chapter1 {
     }
 
     //todo:P04
-    public  static  boolean onlyDigits(String text){
+    public   boolean onlyDigits(String text){
         for(int i=0;i<text.length();i++){
             if(Character.isDigit(text.charAt(i))==false){
                 return false;
@@ -57,7 +57,7 @@ public class Chapter1 {
     }
 
     //todo:P05
-    public  static  void vowelsAndConsonants(String text){
+    public  void vowelsAndConsonants(String text){
         String vowels="aeiouAEIOU";
         int nrVowels=0;
         int nrCons=0;
@@ -76,7 +76,7 @@ public class Chapter1 {
     }
 
     //todo:P06
-    public static int occurrencesOfACertainCharacter(char ch, String text){
+    public  int occurrencesOfACertainCharacter(char ch, String text){
 
         int occurrences=0;
         for (int i=0;i<text.length();i++){
@@ -88,7 +88,7 @@ public class Chapter1 {
     }
 
     //todo:P07
-    public  static void convert(String text){
+    public   void convert(String text){
 
         int text1=Integer.parseInt(text);
         float text2=Float.parseFloat(text);
@@ -99,7 +99,7 @@ public class Chapter1 {
     }
 
     //todo:P08
-    public static  String removingWhiteSpaces(String text) {
+    public  String removingWhiteSpaces(String text) {
 
         String[] words = text.split(" ");
         text = "";
@@ -114,17 +114,17 @@ public class Chapter1 {
     }
 
     //todo:P09
-    public static String joiningStrings(){
+    public  String joiningStrings(){
         String text=String.join(" ","this","is","an","example");
         return text;
     }
 
     //todo:P10
-    public static void permutations(String text){
+    public  void permutations(String text){
         permutations1("",text);
 
     }
-    private static void permutations1(String prefix,String text){
+    private void permutations1(String prefix,String text){
 
         int n=text.length();
 
@@ -140,19 +140,19 @@ public class Chapter1 {
 
 
     //todo:P11
-    private static String palindrome(String text){
+    private  String palindrome(String text){
         String palindrom="";
         for(int i=text.length()-1;i>=0;i--){
             palindrom+=text.charAt(i);
         }
         return palindrom;
     }
-    public static boolean isPalindrome(String text){
+    public  boolean isPalindrome(String text){
         return text.equals(palindrome(text));
     }
 
     //todo:P12
-    public static String removingDublicateCharacters(String text){
+    public  String removingDublicateCharacters(String text){
         for(int i=0;i<text.length()-1;i++){
             if(text.charAt(i)==text.charAt(i+1)){
                 text=text.substring(0,i)+text.substring(i+1);
@@ -165,7 +165,7 @@ public class Chapter1 {
 
 
     //todo:P13
-    public static String removingAGivenCharacter(char ch,String text){
+    public  String removingAGivenCharacter(char ch,String text){
         for(int i=0;i<text.length();i++){
             if(text.charAt(i)==ch){
                 text=text.substring(0,i)+text.substring(i+1);
@@ -176,7 +176,7 @@ public class Chapter1 {
     }
 
     //todo:P14
-    private static int apperance(char ch,String text){
+    private  int apperance(char ch,String text){
         int ap=0;
         for(int i=0;i<text.length();i++){
             if(text.charAt(i)==ch){
@@ -185,7 +185,7 @@ public class Chapter1 {
         }
         return ap;
     }
-    public static char characterWithMostApparances(String text){
+    public  char characterWithMostApparances(String text){
 
         char chMax=text.charAt(0);
         int max=apperance(chMax,text);
@@ -202,7 +202,7 @@ public class Chapter1 {
     }
 
     //todo:P15
-    public static void sortingAnArrayOfStrings(String[] array){
+    public  void sortingAnArrayOfStrings(String[] array){
         int flag;
         do{
             flag=1;
@@ -218,13 +218,13 @@ public class Chapter1 {
     }
 
     //todo:P16
-    public static boolean stringContainsSubstring(String text,String sub){
+    public boolean stringContainsSubstring(String text,String sub){
 
         return text.contains(sub);
     }
 
     //todo:P17
-    public static int countingSubstrings(String text,String sub){
+    public  int countingSubstrings(String text,String sub){
 
         int count=0;
         int n=sub.length();
@@ -238,7 +238,7 @@ public class Chapter1 {
     }
 
     //todo:P18
-    public static boolean anagrams(String text1, String text2){
+    public  boolean anagrams(String text1, String text2){
 
 
         int[] characters=new int[256];
@@ -275,20 +275,20 @@ public class Chapter1 {
     }
 
     //todo:P19
-    public static void declaringMultipleStrings(){
+    public  void declaringMultipleStrings(){
         String text=String.join(System.lineSeparator(),"My name is ","The same as yours");
         System.out.println(text);
     }
 
     //todo:P20
-    public static String concatenatingNTimes(int n,String text){
+    public  String concatenatingNTimes(int n,String text){
         String concatText= String.join("", Collections.nCopies(n,text));
 
         return  concatText;
     }
 
     //todo:P21
-    public static String deletingTrailingAndLeadingSpaces(String text){
+    public  String deletingTrailingAndLeadingSpaces(String text){
         for(int i=0;i<text.length();i++){
             if(text.charAt(i)==' '){
                 text=text.substring(0,i)+text.substring(i+1);
@@ -308,7 +308,7 @@ public class Chapter1 {
     }
 
     //todo:P22
-    public static String longestCommonPrefix(String text){
+    public  String longestCommonPrefix(String text){
         String [] words=text.split(" ");
         int firstL=words[0].length();
 
